@@ -1,0 +1,210 @@
+.gallery {
+  --s: 150px; /* control the size */
+  --g: 5px;  /* control the gap */
+  --d: 25px; /* diameter of circle */
+
+  --vj: 155px;
+  --hj: 116.5px; /* 0.75*--s + 0.87 * --g */
+  --shj: calc(0.5*var(--s) + 0.87 * var(--g));
+
+  display: grid;
+
+  height: 900px;
+  width: 900px;
+
+  position: relative;
+
+  align-content: center;
+
+  padding: 300px;
+}
+
+
+.gallery > .tile {
+  grid-area: 1/1;
+  width: var(--s);
+  height: var(--s);
+  aspect-ratio: 1;
+  /* clip-path: polygon(25% 0%, 75% 0%, 100% 50%,75% 100%,25% 100%,0 50%); */
+  transform: translate(var(--_x,0),var(--_y,0)) ;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0);
+  pointer-events: none;
+}
+
+.gallery > .tile:nth-child(1) {--_y: calc(-0*(var(--s)))}
+
+.gallery > .tile:nth-child(2) {--_y: calc(-1*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(3) {--_y: calc(var(--s) + var(--g))}
+.gallery > .tile:nth-child(4) {--_y: calc(2* var(--s) + 2* var(--g))}
+
+.gallery > .tile:nth-child(5) {--_y: calc(-1.5*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(5) {--_x: calc(.75*var(--s) + .87*var(--g))}
+.gallery > .tile:nth-child(6) {--_y: calc(-.5*var(--s) - 0.5*var(--g))}
+.gallery > .tile:nth-child(6) {--_x: calc(.75*var(--s) + .87*var(--g))}
+.gallery > .tile:nth-child(7) {--_y: calc(.5*var(--s) + 0.5*var(--g))}
+.gallery > .tile:nth-child(7) {--_x: calc(.75*var(--s) + .87*var(--g))}
+.gallery > .tile:nth-child(8) {--_y: calc(1.5* var(--s) + 1.5*var(--g))}
+.gallery > .tile:nth-child(8) {--_x: calc(.75*var(--s) + .87*var(--g))}
+
+.gallery > .tile:nth-child(9) {--_y: calc(-1.5*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(9) {--_x: calc(-.75*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(10) {--_y: calc(-.5*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(10) {--_x: calc(-.75*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(11) {--_y: calc(.5*var(--s) + .5*var(--g))}
+.gallery > .tile:nth-child(11) {--_x: calc(-.75*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(12) {--_y: calc(1.5* var(--s) + 1.5* var(--g))}
+.gallery > .tile:nth-child(12) {--_x: calc(-.75*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(13) {--_y: calc(-2*(var(--s) +var(--g)))}
+
+.gallery > .tile:nth-child(14) {--_y: calc(-1*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(14) {--_x: calc(1.5*var(--s) + 2*.87*var(--g))}
+.gallery > .tile:nth-child(15) {--_y: calc(var(--s) + var(--g))}
+.gallery > .tile:nth-child(15) {--_x: calc(1.5*var(--s) + 2*.87*var(--g))}
+.gallery > .tile:nth-child(16) {--_x: calc(1.5*var(--s) + 2*.87*var(--g))}
+
+.gallery > .tile:nth-child(17) {--_y: calc(-1*(var(--s) +var(--g)))}
+.gallery > .tile:nth-child(17) {--_x: calc(-1*(1.5*var(--s) + 2*.87*var(--g)))}
+.gallery > .tile:nth-child(18) {--_y: calc(var(--s) + var(--g))}
+.gallery > .tile:nth-child(18) {--_x: calc(-1*(1.5*var(--s) + 2*.87*var(--g)))}
+.gallery > .tile:nth-child(19) {--_x: calc(-1*(1.5*var(--s) + 2*.87*var(--g)))}
+
+.tile > .hex{
+  grid-area: 1/1;
+  width: var(--s);
+  height: var(--s);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%,75% 100%,25% 100%,0 50%);
+  /* background: rgb(0, 255, 255);
+  opacity: 0.75; */
+  /* z-index: 1; */
+}
+
+.intersections{
+
+}
+
+.intersections > .tileintersect{
+  position: absolute;
+  grid-area: 1/1;
+  height: var(--d);
+  width: var(--d);
+  aspect-ratio: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transform: translate(calc(var(--_xs,0) - 0.5* var(--d) - 0.5* 0.87 * var(--g)), calc(var(--_ys,0) - 0.5*var(--s) - 0.5 * var(--d) )) ;
+  display: inline-block;
+  pointer-events: auto;
+  z-index: 100;
+  /* overflow: visible; */
+}
+/* for some reason child 1 does not get used */
+.intersections > .tileintersect:nth-child(1) {--_ys: 0px}
+.intersections > .tileintersect:nth-child(1) {--_xs: 0px}
+
+.intersections > .tileintersect:nth-child(2) {--_ys: -0.5* var(--s) - 0.5 * var(--g)}
+.intersections > .tileintersect:nth-child(2) {--_xs: 0.25 * var(--s)}
+
+.intersections > .tileintersect:nth-child(3) {--_ys: -0.5* var(--s) - 0.5 * var(--g)}
+.intersections > .tileintersect:nth-child(3) {--_xs: 0.75 * var(--s) + 0.87 * var(--g)}
+
+.intersections > .tileintersect:nth-child(4) {--_ys: 0px}
+.intersections > .tileintersect:nth-child(4) {--_xs: 1 * var(--s) + 0.87 * var(--g)}
+
+.intersections > .tileintersect:nth-child(5) {--_ys: 0.5* var(--s) + 0.5 * var(--g)}
+.intersections > .tileintersect:nth-child(5) {--_xs: 0.75 * var(--s) + 0.87 * var(--g)}
+
+.intersections > .tileintersect:nth-child(6) {--_ys: 0.5* var(--s) + 0.5 * var(--g)}
+.intersections > .tileintersect:nth-child(6) {--_xs: 0.25 * var(--s) }
+
+.edges{
+  --s: 150px; /* control the size */
+  --h: 10px;
+  --w: 80px;
+
+}
+
+.edge{
+  position: absolute;
+  grid-area: 1/1;
+  height: var(--h);
+  width: var(--w);
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translate(calc(var(--_xe,0) ), calc(var(--_ye,0) - 2.5px)) rotate(var(--_re,0)) ;
+  transform-origin: top left;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.edges > div.edge:nth-child(1) {--_re: 117deg}
+.edges > div.edge:nth-child(1) {--_ye: -150px}
+.edges > div.edge:nth-child(1) {--_xe: calc(0.25 * 150px + 0.87 * 0.5 * var(--h))}
+
+.edges > .edge:nth-child(2) {--_ye: -155px}
+.edges > .edge:nth-child(2) {--_xe: calc(0.25 * 150px)}
+.edges > .edge:nth-child(2) {--_re: 0deg}
+
+.edges > .edge:nth-child(3) {--_ye: -150px}
+.edges > .edge:nth-child(3) {--_xe: calc(0.75 * 150px + 0.5 * var(--h) + 0.5 * var(--g))}
+.edges > .edge:nth-child(3) {--_re: 63deg}
+
+.edges > .edge:nth-child(4) {--_ye: calc( -0.5 * 150px + 5px )}
+.edges > .edge:nth-child(4) {--_xe: calc(150px + 0.5 * var(--h) + 0.5 * var(--g))}
+.edges > .edge:nth-child(4) {--_re: 117deg}
+
+.edges > .edge:nth-child(5) {--_ye: 0px}
+.edges > .edge:nth-child(5) {--_xe: calc(0.25 * 150px)}
+.edges > .edge:nth-child(5) {--_re: 0deg}
+
+.edges > .edge:nth-child(6) {--_ye: calc(-0.5 * var(--s) + 7.5px)}
+.edges > .edge:nth-child(6) {--_xe: 5px}
+.edges > .edge:nth-child(6) {--_re: 63deg}
+
+/* math does not add up but I have transform fatigue */
+
+.circle{
+  --diameter: 65px;
+  height: var(--diameter);
+  width: var(--diameter);
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(calc(0.5*var(--s) - 0.5*var(--diameter)), calc(0.5*var(--s) - 0.5*var(--diameter)));
+
+  font: bold 30px/65px Helvetica;
+  text-align: center;
+}
+
+.house {
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  transform: rotate(-90deg);
+  z-index:800;
+
+}
+.house::before {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transform: rotate(90deg);
+  content: "";
+  position: absolute;
+}
+
+/* roof of the house */
+.house::before {
+  top: 4px;
+  left: 14px;
+  border-width: 0 12px 12px 12px;
+  border-color: transparent transparent #000000 transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #aabbfb;
+}

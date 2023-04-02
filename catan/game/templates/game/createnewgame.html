@@ -1,0 +1,44 @@
+{% extends "game/index.html" %}
+
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Who you want to play with?</legend>
+            {{ form.as_p }}
+        </fieldset>
+<!--        <div class="form-group">-->
+<!--            <button class="btn btn-outline-info" type="submit">Create game</button>-->
+<!--        </div>-->
+
+        <input type="submit" />
+
+    </form>
+<!--    <div class="border-top pt-3">-->
+<!--        <small class="text-muted">-->
+<!--            Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>-->
+<!--        </small>-->
+<!--    </div>-->
+</div>
+
+<script>
+<!--let form_count = Number(document.querySelector('#id_extra_field_count').value);-->
+<!--// get extra form count so we know what index to use for the next item.-->
+
+<!--$("#add-another").click(function() {-->
+<!--    form_count ++;-->
+<!--    console.log(form_count)-->
+<!--    let element = $('<input type="text"/>');-->
+<!--    element.attr('name', 'extra_field_' + form_count);-->
+<!--    $("#forms").append(element);-->
+<!--    // build element and append it to our forms container-->
+
+<!--    $("[name=extra_field_count]").val(form_count);-->
+<!--    // increment form count so our view knows to populate-->
+<!--    // that many fields for validation-->
+<!--})-->
+</script>
+
+{% endblock content %}
+

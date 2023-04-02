@@ -1,0 +1,20 @@
+{% extends "game/index.html" %}
+
+{% block content %}
+
+<h2>Invites</h2>
+<ul>
+{% for invite in invites %}
+    <li>{{ invite.name }}</li>
+{% endfor %}
+</ul>
+
+<h2>Active games</h2>
+<ul>
+{% for game in games %}
+    <li>{{ game.name }}</li>
+{% endfor %}
+</ul>
+
+{% endblock content %}
+

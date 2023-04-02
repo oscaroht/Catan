@@ -1,0 +1,762 @@
+{% extends "game/index.html" %}
+
+{% block content%}
+<br>
+<div class="gallery">
+    <div class="tile" id="t0">
+      <div class="hex">
+        <div class="circle"> t0 </div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i01"></div>
+        <div class="tileintersect" id="i02"></div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e01"></div>
+        <div class="edge" id="e02"></div>
+        <div class="edge" id="e03"></div>
+      </div>
+    </div>
+
+    <div class="tile" id="t1">
+      <div class="hex">
+        <div class="circle"> t1 </div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i11"></div>
+        <div class="tileintersect" id="i12"></div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e11"></div>
+        <div class="edge" id="e12"></div>
+        <div class="edge" id="e13"></div>
+      </div>
+    </div>
+
+    <div class="tile" id="t2">
+      <div class="hex">
+        <div class="circle"> t2 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e21"></div>
+        <div class="edge" id="e22"></div>
+        <div class="edge" id="e23"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i21"></div>
+        <div class="tileintersect" id="i22"></div>
+     </div>
+    </div>
+
+
+    <div class="tile" id="t3">
+      <div class="hex">
+        <div class="circle"> t3 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e31"></div>
+        <div class="edge" id="e32"></div>
+        <div class="edge" id="e33"></div>
+        <div class="edge" id="e34"></div>
+        <div class="edge" id="e35"></div>
+        <div class="edge" id="e36"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i31"></div>
+        <div class="tileintersect" id="i32"></div>
+        <div></div>
+        <div class="tileintersect" id="i34"></div>
+        <div class="tileintersect" id="i35"></div>
+        <div class="tileintersect" id="i36"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t4">
+      <div class="hex">
+        <div class="circle"> t4 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e41"></div>
+        <div class="edge" id="e42"></div>
+        <div class="edge" id="e43"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i41"></div>
+        <div class="tileintersect" id="i42"></div>
+        <div class="tileintersect" id="i43"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t5">
+      <div class="hex">
+        <div class="circle"> t5 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e51"></div>
+        <div class="edge" id="e52"></div>
+        <div class="edge" id="e53"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i51"></div>
+        <div class="tileintersect" id="i52"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t6">
+      <div class="hex">
+        <div class="circle"> t6 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e61"></div>
+        <div class="edge" id="e62"></div>
+        <div class="edge" id="e63"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i61"></div>
+        <div class="tileintersect" id="i62"></div>
+     </div>
+    </div>
+
+
+    <div class="tile" id="t7">
+      <div class="hex">
+        <div class="circle"> t7 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e71"></div>
+        <div class="edge" id="e72"></div>
+        <div class="edge" id="e73"></div>
+        <div class="edge" id="e74"></div>
+        <div class="edge" id="e75"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i71"></div>
+        <div class="tileintersect" id="i72"></div>
+        <div></div>
+        <div class="tileintersect" id="i74"></div>
+        <div class="tileintersect" id="i75"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t8">
+      <div class="hex">
+        <div class="circle"> t8 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e81"></div>
+        <div class="edge" id="e82"></div>
+        <div class="edge" id="e83"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i81"></div>
+        <div class="tileintersect" id="i82"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t9">
+      <div class="hex">
+        <div class="circle"> t9 </div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i91"></div>
+        <div class="tileintersect" id="i92"></div>
+     </div>
+     <div class="edges">
+      <div class="edge" id="e91"></div>
+      <div class="edge" id="e92"></div>
+      <div class="edge" id="e93"></div>
+    </div>
+    </div>
+
+    <div class="tile" id="t10">
+      <div class="hex">
+        <div class="circle"> t10 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e101"></div>
+        <div class="edge" id="e102"></div>
+        <div class="edge" id="e103"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i101"></div>
+        <div class="tileintersect" id="i102"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t11">
+      <div class="hex">
+        <div class="circle"> t11 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e111"></div>
+        <div class="edge" id="e112"></div>
+        <div class="edge" id="e113"></div>
+        <div></div>
+        <div class="edge" id="e115"></div>
+        <div class="edge" id="e116"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i111"></div>
+        <div class="tileintersect" id="i112"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="tileintersect" id="i116"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t12">
+      <div class="hex">
+        <div class="circle"> t12 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e121"></div>
+        <div class="edge" id="e122"></div>
+        <div class="edge" id="e123"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i121"></div>
+        <div class="tileintersect" id="i122"></div>
+        <div class="tileintersect" id="i123"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t13">
+      <div class="hex">
+        <div class="circle"> t13 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e131"></div>
+        <div class="edge" id="e132"></div>
+        <div class="edge" id="e133"></div>
+        <div class="edge" id="e134"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i131"></div>
+        <div class="tileintersect" id="i132"></div>
+        <div class="tileintersect" id="i133"></div>
+        <div class="tileintersect" id="i134"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t14">
+      <div class="hex">
+        <div class="circle"> t14 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e141"></div>
+        <div class="edge" id="e142"></div>
+        <div class="edge" id="e143"></div>
+        <div class="edge" id="e144"></div>
+        <div class="edge" id="e145"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i141"></div>
+        <div class="tileintersect" id="i142"></div>
+        <div class="tileintersect" id="i143"></div>
+        <div class="tileintersect" id="i144"></div>
+        <div class="tileintersect" id="i145"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t15">
+      <div class="hex">
+        <div class="circle"> t15 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e151"></div>
+        <div class="edge" id="e152"></div>
+        <div class="edge" id="e153"></div>
+        <div class="edge" id="e154"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i151"></div>
+        <div class="tileintersect" id="i152"></div>
+        <div class="tileintersect" id="i153"></div>
+        <div class="tileintersect" id="i154"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t16">
+      <div class="hex">
+        <div class="circle"> t16 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e161"></div>
+        <div class="edge" id="e162"></div>
+        <div class="edge" id="e163"></div>
+        <div></div>
+        <div></div>
+        <div class="edge" id="e166"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i161"></div>
+        <div class="tileintersect" id="i162"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t17">
+      <div class="hex">
+        <div class="circle"> t17 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e171"></div>
+        <div class="edge" id="e172"></div>
+        <div class="edge" id="e173"></div>
+        <div></div>
+        <div class="edge" id="e175"></div>
+        <div class="edge" id="e176"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i171"></div>
+        <div class="tileintersect" id="i172"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="tileintersect" id="i176"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t18">
+      <div class="hex">
+        <div class="circle"> t18 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e181"></div>
+        <div class="edge" id="e182"></div>
+        <div class="edge" id="e183"></div>
+        <div></div>
+        <div></div>
+        <div class="edge" id="e186"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i181"></div>
+        <div class="tileintersect" id="i182"></div>
+     </div>
+    </div>
+</div>
+
+<div>
+<button class="btn-send-turn" type="button">End turn</button>
+</div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+const docTiles = document.querySelectorAll("div.tile")
+const docHex = document.querySelectorAll("div.hex")
+const docIntersect = document.querySelectorAll("div.tileintersect")
+const docEdges = document.querySelectorAll("div.edge")
+
+var availableTiles = ["lumber", "lumber", "lumber", "lumber", "wool", "wool", "wool", "wool", "brick", "brick", "brick", "ore", "ore", "ore", "grain", "grain", "grain", "grain"]
+var availableNumbers = [2,3,3,4,4,5,5,6,6,8,8,9,9,10,10,11,11,12]
+
+const commodities = {"lumber": {"type": "lumber", "tileColor": "ForestGreen", "maxNumber": 4 },
+                     "wool": {"type": "wool", "tileColor": "LightGreen", "maxNumber": 4},
+                     "brick": {"type": "brick", "tileColor": "Brown", "maxNumber": 3},
+                     "ore": {"type": "ore", "tileColor": "Gray", "maxNumber": 3},
+                     "grain": {"type": "grain", "tileColor": "Gold", "maxNumber": 4},
+                     "sand": {"type": "sand", "tileColor": "Linen", "maxNumber": 1}}
+
+var board = {}
+var intersectionMap = []
+var numberTileMap = []
+var reversedIntersectionMap = []
+
+class Node {
+  constructor(intersectId, tileId){
+    this.intersectId = intersectId
+    this.tileId= tileId
+  }
+}
+
+function compare(el1,el2){
+  const domRect1 = el1.getBoundingClientRect();
+  const domRect2 = el2.getBoundingClientRect();
+
+  return !(
+    domRect1.top > domRect2.bottom ||
+    domRect1.right < domRect2.left ||
+    domRect1.bottom < domRect2.top ||
+    domRect1.left > domRect2.right  );
+}
+
+class Graph {
+  vertices = new Set();
+  adjacentList = new Map();
+  edgeList = new Map();
+
+  addVertex(vertex = null) {
+    if(
+     !this.vertices.has(vertex) &&
+     vertex !== null &&
+     vertex !== undefined
+    ) {
+      this.vertices.add(vertex);
+      this.adjacentList.set(vertex, {'owner': 0, 'edges': [], 'link': [], 'edgeOwner': [0, 0, 0]});
+      // this.edgeList.set(vertex, new Set())
+    }
+  }
+
+  addEdge(vertex1 = null, vertex2 = null, edgeId = null, undirected = true) {
+     if(
+       vertex1 !== null && vertex1 !== undefined &&
+       vertex2 !== null && vertex2 !== undefined &&
+       vertex1 != vertex2
+     ) {
+       this.addVertex(vertex1);
+       this.addVertex(vertex2);
+      //  console.log(this.adjacentList.get(vertex1)['edges'])
+      //  console.log(this.adjacentList.get(vertex1)['edges'].add(3))
+       this.adjacentList.get(vertex1)['edges'].push(edgeId);  // [] is used to signal that edgeId is a variable in a literal notation
+       this.adjacentList.get(vertex1)['link'].push(vertex2);
+      //  this.edgeList.get(vertex1).add(edgeId)
+       if(undirected) {
+         this.adjacentList.get(vertex2)['edges'].push(edgeId); // [] is used to signal that edgeId is a variable in a literal notation
+         this.adjacentList.get(vertex2)['link'].push(vertex1);
+       }
+     }
+   }
+
+  populateGraph(){
+    // for every  tile create a list of all intersections on this tile
+    for(let i=0; i<docEdges.length;i++){
+      let nodeList = []
+      for(let j=0; j<docIntersect.length;j++){
+        if(compare(docEdges[i], docIntersect[j])===true){
+          nodeList.push(docIntersect[j].id)
+        }
+      }
+      console.log(nodeList.length)
+      g.addEdge(nodeList[0], nodeList[1], docEdges[i].id )
+
+    }
+  }
+
+  getVertexById(id){
+    return this.adjacentList.get(id)
+  }
+
+  setOwner(playerId, id){
+    console.log(`player ${playerId} obtained intersection ${id}`)
+    this.getVertexById(id)['owner'] = playerId
+  }
+
+  setEdgeOwner(playerId, id){
+    this.adjacentList.forEach((val, key) =>{
+      let e = []
+      for(let i = 0; i<val['edges']; i++){
+        if(val['edges'][i] == id){
+          val['edgeOwner'] = playerId
+        }
+      }
+    })
+  }
+
+}
+
+
+
+function mapDotHex(){
+  // for every  tile create a list of all intersections on this tile
+  for(let i=0; i<docTiles.length;i++){
+    intersectionMap[i] = []
+    for(let j=0; j<docIntersect.length;j++){
+      if(compare(docTiles[i], docIntersect[j])===true){
+        intersectionMap[i].push(j)
+      }
+    }
+  }
+}
+
+
+
+
+
+
+function Player(id, name, color, order){
+  this.playerId = id,
+  this.playerName = name,
+  this.color = color,
+  this.playerHand = {'lumber': 0, 'wool': 0, 'brick': 0, 'ore': 0, 'grain': 0},
+  this.order = order
+}
+
+const players = [new Player(1,'Alex', 'blue', 1),
+                 new Player(2, 'Michelle', 'red', 2),
+                 new Player(3, 'Steve', 'yellow', 3)
+              ]
+
+function getPlayerById(id){
+  console.log(players.length)
+  for(let i=0; i<players.length;i++){
+    // console.log(`${players[i].playerId} != ${id}`)
+    if(players[i].playerId == id){
+      return players[i]
+    }
+  }
+}
+
+function getPLayerByOrder(order){
+  for(let i=0; i<players.length;i++){
+    if(players[i].order == order){
+      return players[i]
+    }
+  }
+}
+
+function reversePlayingOrder(){
+  for(let i=0; i<players.length;i++){
+    players[i].order = -1* (players[i].order - players.length -1 )
+    console.log(`player ${players[i].playerName} is now ${players[i].order}`)
+  }
+}
+
+var playerHand = {}
+var field = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+var roundCounter = 0
+var playerTurn = 1
+var currentPlayer = players[0]
+
+function setBoardRandom(){
+  var keys = Object.keys(commodities);
+  for(let i=0; i<docTiles.length;i++){
+    // get random commodity and number
+    if(i==0){  // 0 is the dessert tile
+      com_type = "sand"
+      number = "*"
+    } else {
+      var index = availableTiles.length * Math.random() << 0
+      var com_type = availableTiles[index]
+      availableTiles.splice(index, 1)  // splice args 1:start index 2:how many deletes 3(optional): insert what
+
+      index = availableNumbers.length * Math.random() << 0
+      var number = availableNumbers[index]
+      availableNumbers.splice(index, 1)  // splice args 1:start index 2:how many deletes 3(optional): insert what
+    }
+
+    var com = commodities[com_type]
+
+    // set the board object
+    board[String(i)] = {'commodity': com["type"], 'number': number}
+
+    // set the tile color
+    docHex[i].style.backgroundColor = com["tileColor"]
+    docHex[i].children[0].innerHTML = number
+    // docNumbers[i].innerHTML = number
+  }
+  console.log("Complete")
+}
+
+
+
+
+// function performRound(){
+//   if(roundCounter == 0){
+//     // this is the setup round
+//     for(let i=0; i<Object.keys(players).length;i++){
+//       performSetUp(players[i]['playerId'])
+//     }
+//   }
+// }
+
+
+
+
+function invalidTownLocations(){
+  // town
+  var notValid = []
+  g.adjacentList.forEach((val, key) =>{
+      if(val['owner'] != 0){
+        notValid.push(key)
+        notValid = notValid.concat(val['link'])  // all intersections cannot be build
+      }
+    })
+  return notValid
+
+
+  // for(let i = 0; i<docIntersect.length; i++){
+  //   // console.log(docIntersect[i].id)
+  //   if(!notValid.includes(docIntersect[i].id)){
+  //     docIntersect[i].style.backgroundColor = "blue"
+  //   }
+  // }
+
+}
+
+function claimStreet(id){
+
+  g.setEdgeOwner(currentPlayer.playerId, id)
+
+  for(let i = 0; i<docEdges.length; i++){
+    docEdges[i].style.pointerEvents = "none"
+    docEdges[i].removeAttribute("onclick")
+  }
+
+  // next player does set up
+  nextTurn()
+
+}
+
+function setUpTurn(el){
+  console.log(el)
+  console.log(`player ${currentPlayer.playerName} obtained intersection ${el.id}`)
+  // field[intersection_idx] = currentPlayer.playerId
+
+  g.setOwner(currentPlayer.playerId, el.id)
+
+  //add house
+  const house = document.createElement("div")
+  house.className = "house"
+  var rect = el.getBoundingClientRect();
+  house.style.left = rect.left+'px'
+  house.style.right = rect.right+'px'
+  house.style.top = rect.top+'px'
+  house.style.bottom = rect.bottom+'px'
+  house.style.backgroundColor = currentPlayer.color
+  document.body.appendChild(house);
+
+
+  // make edges clickable so player can choose streets
+  // will skip for now
+
+  // remove all intersection click events
+  for(let i=0; i<docIntersect.length; i++){
+      docIntersect[i].removeAttribute("onclick")
+    }
+
+  // add 3 street targets
+  let edges = g.adjacentList.get(el.id)['edges']
+  for(let i = 0; i<edges.length; i++){
+    document.getElementById(edges[i]).style.pointerEvents = "auto"
+    document.getElementById(edges[i]).setAttribute("onclick", `claimStreet(${edges[i]})`)
+
+
+  }
+
+}
+
+function nextTurn(){
+  if(currentPlayer.order==players.length){  // playerId starts at 1
+    // this is the final player
+    if(roundCounter == 0 || roundCounter==1){
+      reversePlayingOrder()
+    }
+    roundCounter +=1
+    playerTurn = 1
+    currentPlayer = getPLayerByOrder(1)
+    console.log(`Round ${roundCounter} starting`)
+  } else{
+    // next player in the same round
+    console.log(getPLayerByOrder(currentPlayer.order + 1))
+    currentPlayer = getPLayerByOrder(currentPlayer.order + 1)
+    console.log(`current player ${currentPlayer}`)
+    playerTurn +=1
+  }
+  performTurn()
+}
+
+function invalidLocationMessage(){
+  console.log("Invalid location")
+}
+
+function performTurn(){
+  if(roundCounter==0 || roundCounter==1){
+    // this is the setup round
+    console.log(`player ${currentPlayer.playerName} is doing the setup`)
+    let notValid = invalidTownLocations()
+    console.log(`invalid ${notValid}`)
+    for(let i=0; i<docIntersect.length; i++){
+      if(notValid.includes(docIntersect[i].id)){
+        docIntersect[i].setAttribute("onclick", "invalidLocationMessage()") //.addEventListener("click", obtainIntersection)
+      } else {
+      docIntersect[i].setAttribute("onclick", `setUpTurn(${docIntersect[i].id})`) //.addEventListener("click", obtainIntersection)
+      }
+    }
+    return
+  }
+  // dice roll
+  var dice = rollDice()
+  payOut(dice)  // handle dice = 7
+
+  //build or play card
+
+}
+
+function rollDice(){
+  d1 = parseInt(6*Math.random() + 1)
+  d2 = parseInt(6*Math.random() + 1)
+  return d1 + d2
+}
+
+
+function payOut(diceNumber){
+  console.log(`fieled length ${field.length}`)
+  console.log(`yield for number ${diceNumber}`)
+  for(let i=0; i<Object.keys(board).length;i++){  //this is how you take the length of an object
+    if(board[i]["number"]==diceNumber){
+      // get the intersections for this tile
+      var intersections = intersectionMap[i]  // these are the 6 intersections of this tile
+      for(let j=0; j<6; j++){
+        console.log(`intersection id ${intersections[j]}`)
+        playerId = field[intersections[j]]
+        if(playerId > 0){
+          console.log(`player ${playerId} gets ${board[i]['commodity']}`)
+        }
+
+      }
+    }
+  }
+}
+
+
+setBoardRandom()
+
+var g = new Graph()
+g.populateGraph()
+
+
+performTurn()
+
+
+
+// payOut(6)
+
+// function print(){
+//   console.log("Clicked edge")
+// }
+
+// function print2(){
+//   console.log("Clicked intersection")
+// }
+
+// for(let i=0; i<docEdges.length; i++){
+//   console.log("Add event listener")
+//   docEdges[i].addEventListener("click", print)
+// }
+
+
+// for(let i=0; i<docIntersect2.length; i++){
+//   console.log("Add event listener")
+//   docIntersect2[i].addEventListener("click", print2)
+// }
+
+</script>
+
+<!-- mega useful for understanding the stacking order
+https://coder-coder.com/z-index-isnt-working/ -->
+
+
+<!-- dice roll animation -->
+<!-- https://www.youtube.com/watch?v=XTF5jXDr2H8 -->
+
+<!-- example of graph
+https://medium.com/before-semicolon/graph-data-structure-implementation-in-javascript-668f291a8a16 -->
+
+{% endblock content %}
+
+
