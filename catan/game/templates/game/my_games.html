@@ -12,7 +12,8 @@
 <h2>Active games</h2>
 <ul>
 {% for game in games %}
-    <li>{{ game.name }}</li>
+    <li> <a href="{% url 'game' pk=game.id %}">{{ game.name }}></a></li>
+
 {% endfor %}
 </ul>
 

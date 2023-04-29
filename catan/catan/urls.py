@@ -27,5 +27,6 @@ urlpatterns = [
     path('profile/', user_views.ProfileView.as_view(), name='profile'),
     path('', game_views.home, name='game-home'),
     path('createnewgame', game_views.CreateNewGameView.as_view(), name='game-createnewgame'),
-    path('mygames', game_views.MyGamesView.as_view(), name='mygames')
+    path('mygames', game_views.MyGamesView.as_view(), name='mygames'),
+    path('game/<int:pk>', game_views.GameView.as_view(), name='game')
 ]

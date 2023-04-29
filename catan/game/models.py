@@ -16,7 +16,7 @@ class Player(models.Model):
     invite_accept_status = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
 class Board(models.Model):
     # Useful to set up the board colors

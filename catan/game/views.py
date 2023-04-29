@@ -66,12 +66,27 @@ class MyGamesView(View):
             return HttpResponse(f"No invites or games yet.")
         player = Player.objects.filter(user=user)
         print(player)
-        games = []
+        games, game_ids = [], []
         for p in player:
             # games_qs = Game.objects.filter(player=p)
             games.append(p.game)
         print(games)
         return render(request, 'game/my_games.html', {'invites': games, 'games': games})
+
+class GameView(View):
+
+    def get(self, request, pk):
+        user = request.user
+        game = Game.objects.filter(id=pk).exists()
+        if not game:
+            return HttpResponse(f'Unauthorized')
+        print(game)
+        players = Player.objects.filter(game=game)
+        print(players)
+        if user not in [p.user for p in players]:
+            return HttpResponse(f'Unauthorized')
+        return HttpResponse(f'<h1>GET game {pk}</h1>')
+
 
 
 # class NewGameView(View):

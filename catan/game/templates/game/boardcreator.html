@@ -1,0 +1,413 @@
+{% extends "game/index.html" %}
+
+{% block content%}
+<br>
+<legend>Choose a board</legend>
+<div class="gallery">
+    <div class="tile" id="t0">
+      <div class="hex">
+        <div class="circle"> t0 </div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i01"></div>
+        <div class="tileintersect" id="i02"></div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e01"></div>
+        <div class="edge" id="e02"></div>
+        <div class="edge" id="e03"></div>
+      </div>
+    </div>
+
+    <div class="tile" id="t1">
+      <div class="hex">
+        <div class="circle"> t1 </div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i11"></div>
+        <div class="tileintersect" id="i12"></div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e11"></div>
+        <div class="edge" id="e12"></div>
+        <div class="edge" id="e13"></div>
+      </div>
+    </div>
+
+    <div class="tile" id="t2">
+      <div class="hex">
+        <div class="circle"> t2 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e21"></div>
+        <div class="edge" id="e22"></div>
+        <div class="edge" id="e23"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i21"></div>
+        <div class="tileintersect" id="i22"></div>
+     </div>
+    </div>
+
+
+    <div class="tile" id="t3">
+      <div class="hex">
+        <div class="circle"> t3 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e31"></div>
+        <div class="edge" id="e32"></div>
+        <div class="edge" id="e33"></div>
+        <div class="edge" id="e34"></div>
+        <div class="edge" id="e35"></div>
+        <div class="edge" id="e36"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i31"></div>
+        <div class="tileintersect" id="i32"></div>
+        <div></div>
+        <div class="tileintersect" id="i34"></div>
+        <div class="tileintersect" id="i35"></div>
+        <div class="tileintersect" id="i36"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t4">
+      <div class="hex">
+        <div class="circle"> t4 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e41"></div>
+        <div class="edge" id="e42"></div>
+        <div class="edge" id="e43"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i41"></div>
+        <div class="tileintersect" id="i42"></div>
+        <div class="tileintersect" id="i43"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t5">
+      <div class="hex">
+        <div class="circle"> t5 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e51"></div>
+        <div class="edge" id="e52"></div>
+        <div class="edge" id="e53"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i51"></div>
+        <div class="tileintersect" id="i52"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t6">
+      <div class="hex">
+        <div class="circle"> t6 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e61"></div>
+        <div class="edge" id="e62"></div>
+        <div class="edge" id="e63"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i61"></div>
+        <div class="tileintersect" id="i62"></div>
+     </div>
+    </div>
+
+
+    <div class="tile" id="t7">
+      <div class="hex">
+        <div class="circle"> t7 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e71"></div>
+        <div class="edge" id="e72"></div>
+        <div class="edge" id="e73"></div>
+        <div class="edge" id="e74"></div>
+        <div class="edge" id="e75"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i71"></div>
+        <div class="tileintersect" id="i72"></div>
+        <div></div>
+        <div class="tileintersect" id="i74"></div>
+        <div class="tileintersect" id="i75"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t8">
+      <div class="hex">
+        <div class="circle"> t8 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e81"></div>
+        <div class="edge" id="e82"></div>
+        <div class="edge" id="e83"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i81"></div>
+        <div class="tileintersect" id="i82"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t9">
+      <div class="hex">
+        <div class="circle"> t9 </div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i91"></div>
+        <div class="tileintersect" id="i92"></div>
+     </div>
+     <div class="edges">
+      <div class="edge" id="e91"></div>
+      <div class="edge" id="e92"></div>
+      <div class="edge" id="e93"></div>
+    </div>
+    </div>
+
+    <div class="tile" id="t10">
+      <div class="hex">
+        <div class="circle"> t10 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e101"></div>
+        <div class="edge" id="e102"></div>
+        <div class="edge" id="e103"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i101"></div>
+        <div class="tileintersect" id="i102"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t11">
+      <div class="hex">
+        <div class="circle"> t11 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e111"></div>
+        <div class="edge" id="e112"></div>
+        <div class="edge" id="e113"></div>
+        <div></div>
+        <div class="edge" id="e115"></div>
+        <div class="edge" id="e116"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i111"></div>
+        <div class="tileintersect" id="i112"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="tileintersect" id="i116"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t12">
+      <div class="hex">
+        <div class="circle"> t12 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e121"></div>
+        <div class="edge" id="e122"></div>
+        <div class="edge" id="e123"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i121"></div>
+        <div class="tileintersect" id="i122"></div>
+        <div class="tileintersect" id="i123"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t13">
+      <div class="hex">
+        <div class="circle"> t13 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e131"></div>
+        <div class="edge" id="e132"></div>
+        <div class="edge" id="e133"></div>
+        <div class="edge" id="e134"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i131"></div>
+        <div class="tileintersect" id="i132"></div>
+        <div class="tileintersect" id="i133"></div>
+        <div class="tileintersect" id="i134"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t14">
+      <div class="hex">
+        <div class="circle"> t14 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e141"></div>
+        <div class="edge" id="e142"></div>
+        <div class="edge" id="e143"></div>
+        <div class="edge" id="e144"></div>
+        <div class="edge" id="e145"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i141"></div>
+        <div class="tileintersect" id="i142"></div>
+        <div class="tileintersect" id="i143"></div>
+        <div class="tileintersect" id="i144"></div>
+        <div class="tileintersect" id="i145"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t15">
+      <div class="hex">
+        <div class="circle"> t15 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e151"></div>
+        <div class="edge" id="e152"></div>
+        <div class="edge" id="e153"></div>
+        <div class="edge" id="e154"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i151"></div>
+        <div class="tileintersect" id="i152"></div>
+        <div class="tileintersect" id="i153"></div>
+        <div class="tileintersect" id="i154"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t16">
+      <div class="hex">
+        <div class="circle"> t16 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e161"></div>
+        <div class="edge" id="e162"></div>
+        <div class="edge" id="e163"></div>
+        <div></div>
+        <div></div>
+        <div class="edge" id="e166"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i161"></div>
+        <div class="tileintersect" id="i162"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t17">
+      <div class="hex">
+        <div class="circle"> t17 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e171"></div>
+        <div class="edge" id="e172"></div>
+        <div class="edge" id="e173"></div>
+        <div></div>
+        <div class="edge" id="e175"></div>
+        <div class="edge" id="e176"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i171"></div>
+        <div class="tileintersect" id="i172"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="tileintersect" id="i176"></div>
+     </div>
+    </div>
+
+    <div class="tile" id="t18">
+      <div class="hex">
+        <div class="circle"> t18 </div>
+      </div>
+      <div class="edges">
+        <div class="edge" id="e181"></div>
+        <div class="edge" id="e182"></div>
+        <div class="edge" id="e183"></div>
+        <div></div>
+        <div></div>
+        <div class="edge" id="e186"></div>
+      </div>
+      <div class="intersections">
+        <div class="tileintersect" id="i181"></div>
+        <div class="tileintersect" id="i182"></div>
+     </div>
+    </div>
+</div>
+
+<div>
+<button onclick="setBoardRandom()">Shuffle board</button>
+</div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+const docTiles = document.querySelectorAll("div.tile")
+const docHex = document.querySelectorAll("div.hex")
+const docIntersect = document.querySelectorAll("div.tileintersect")
+const docEdges = document.querySelectorAll("div.edge")
+
+var availableTiles = ["lumber", "lumber", "lumber", "lumber", "wool", "wool", "wool", "wool", "brick", "brick", "brick", "ore", "ore", "ore", "grain", "grain", "grain", "grain"]
+var availableNumbers = [2,3,3,4,4,5,5,6,6,8,8,9,9,10,10,11,11,12]
+
+const commodities = {"lumber": {"type": "lumber", "tileColor": "ForestGreen", "maxNumber": 4 },
+                     "wool": {"type": "wool", "tileColor": "LightGreen", "maxNumber": 4},
+                     "brick": {"type": "brick", "tileColor": "Brown", "maxNumber": 3},
+                     "ore": {"type": "ore", "tileColor": "Gray", "maxNumber": 3},
+                     "grain": {"type": "grain", "tileColor": "Gold", "maxNumber": 4},
+                     "sand": {"type": "sand", "tileColor": "Linen", "maxNumber": 1}}
+
+var board = {}
+var intersectionMap = []
+var numberTileMap = []
+var reversedIntersectionMap = []
+
+function setBoardRandom(){
+  var keys = Object.keys(commodities);
+  console.log(keys)
+  let tiles = availableTiles.slice()  // copy
+  let numbers = availableNumbers.slice()  // copy
+  console.log(tiles)
+  for(let i=0; i<docTiles.length;i++){
+    // get random commodity and number
+    if(i==0){  // 0 is the dessert tile
+      com_type = "sand"
+      number = "*"
+    } else {
+      var index = tiles.length * Math.random() << 0  // <<0 means make int
+      var com_type = tiles[index]
+      tiles.splice(index, 1)  // splice args 1:start index 2:how many deletes 3(optional): insert what
+
+      index = numbers.length * Math.random() << 0
+      var number = numbers[index]
+      numbers.splice(index, 1)  // splice args 1:start index 2:how many deletes 3(optional): insert what
+    }
+
+    var com = commodities[com_type]
+
+    // set the board object
+    board[String(i)] = {'commodity': com["type"], 'number': number}
+
+    // set the tile color
+    docHex[i].style.backgroundColor = com["tileColor"]
+    docHex[i].children[0].innerHTML = number
+    // docNumbers[i].innerHTML = number
+  }
+  console.log("Complete")
+}
+
+setBoardRandom()
+
+</script>
+
+<!-- mega useful for understanding the stacking order
+https://coder-coder.com/z-index-isnt-working/ -->
+
+{% endblock content %}
+
+
