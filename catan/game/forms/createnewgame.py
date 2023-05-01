@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 class NewGameForm(forms.Form):
     name = forms.CharField()
     players = forms.ModelMultipleChoiceField(queryset=User.objects.all())
+    board = forms.CharField(widget=forms.HiddenInput(), required=True)
+
 
 
 # this is an atempt to add a field when user clicks a button

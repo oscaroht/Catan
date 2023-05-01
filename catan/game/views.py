@@ -47,6 +47,8 @@ class CreateNewGameView(View):
         print(form.cleaned_data.get('players'))
         users = form.cleaned_data.get('players')
         game_name = form.cleaned_data.get('name')
+        board = form.cleaned_data.get('board')
+        print(board)
 
         new_game = Game.objects.create(name=game_name)
         new_game.save()

@@ -6,7 +6,9 @@
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Who you want to play with?</legend>
+
             {{ form.as_p }}
+            {{form.board.as_hidden}}
         </fieldset>
 <!--        <div class="form-group">-->
 <!--            <button class="btn btn-outline-info" type="submit">Create game</button>-->
@@ -23,6 +25,73 @@
 </div>
 
 <script>
+
+const docTiles = document.querySelectorAll("div.tile")
+const docHex = document.querySelectorAll("div.hex")
+const docIntersect = document.querySelectorAll("div.tileintersect")
+const docEdges = document.querySelectorAll("div.edge")
+
+var availableTiles = ["lumber", "lumber", "lumber", "lumber", "wool", "wool", "wool", "wool", "brick", "brick", "brick", "ore", "ore", "ore", "grain", "grain", "grain", "grain"]
+var availableNumbers = [2,3,3,4,4,5,5,6,6,8,8,9,9,10,10,11,11,12]
+
+const commodities = {"lumber": {"type": "lumber", "tileColor": "ForestGreen", "maxNumber": 4 },
+                     "wool": {"type": "wool", "tileColor": "LightGreen", "maxNumber": 4},
+                     "brick": {"type": "brick", "tileColor": "Brown", "maxNumber": 3},
+                     "ore": {"type": "ore", "tileColor": "Gray", "maxNumber": 3},
+                     "grain": {"type": "grain", "tileColor": "Gold", "maxNumber": 4},
+                     "sand": {"type": "sand", "tileColor": "Linen", "maxNumber": 1}}
+
+var board = {}
+var board2 = []
+var intersectionMap = []
+var numberTileMap = []
+var reversedIntersectionMap = []
+
+function setBoardRandom(){
+  var keys = Object.keys(commodities);
+  console.log(keys)
+  let tiles = availableTiles.slice()  // copy
+  let numbers = availableNumbers.slice()  // copy
+  board2 = []
+  console.log(tiles)
+  for(let i=0; i<docTiles.length;i++){
+    // get random commodity and number
+    if(i==0){  // 0 is the dessert tile
+      com_type = "sand"
+      number = "*"
+    } else {
+      var index = tiles.length * Math.random() << 0  // <<0 means make int
+      var com_type = tiles[index]
+      tiles.splice(index, 1)  // splice args 1:start index 2:how many deletes 3(optional): insert what
+
+      index = numbers.length * Math.random() << 0
+      var number = numbers[index]
+      numbers.splice(index, 1)  // splice args 1:start index 2:how many deletes 3(optional): insert what
+    }
+
+    var com = commodities[com_type]
+
+    // set the board object
+    board[String(i)] = {'commodity': com["type"], 'number': number}
+    board2.push({'commodity': com["type"], 'number': number})
+
+    // set the tile color
+    docHex[i].style.backgroundColor = com["tileColor"]
+    docHex[i].children[0].innerHTML = number
+    // docNumbers[i].innerHTML = number
+  }
+  console.log("Complete")
+  console.log(JSON.stringify(board))
+  document.getElementById('id_board').value=JSON.stringify(board)
+}
+
+setBoardRandom()
+
+<!--document.querySelector('input[name="board"]');-->
+
+
+
+
 <!--let form_count = Number(document.querySelector('#id_extra_field_count').value);-->
 <!--// get extra form count so we know what index to use for the next item.-->
 
