@@ -49,13 +49,18 @@ class CreateNewGameView(View):
         game_name = form.cleaned_data.get('name')
         board = form.cleaned_data.get('board')
         print(board)
+        board = json.loads(board)
+        print(board)
+        print(board['0'])
+
 
         new_game = Game.objects.create(name=game_name)
-        new_game.save()
         for p in users:
             player = Player.objects.create(game=new_game, user=p)
             print(f"Add user {p} to game {new_game} as {player}")
-            player.save()
+
+        for key, value in board.items():
+            Board.objects.create(game=new_game, tile_id=key, commodity=value['commodity'], number=value['number'])
 
         return HttpResponse(f"Invited users {', '.join([u.username for u in users])} for game: {new_game.name}")
 

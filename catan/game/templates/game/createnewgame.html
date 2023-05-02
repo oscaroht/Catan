@@ -8,7 +8,7 @@
             <legend class="border-bottom mb-4">Who you want to play with?</legend>
 
             {{ form.as_p }}
-            {{form.board.as_hidden}}
+<!--            {{form.board.as_hidden}}-->
         </fieldset>
 <!--        <div class="form-group">-->
 <!--            <button class="btn btn-outline-info" type="submit">Create game</button>-->
@@ -58,7 +58,7 @@ function setBoardRandom(){
     // get random commodity and number
     if(i==0){  // 0 is the dessert tile
       com_type = "sand"
-      number = "*"
+      number = "0"
     } else {
       var index = tiles.length * Math.random() << 0  // <<0 means make int
       var com_type = tiles[index]
