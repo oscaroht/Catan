@@ -361,7 +361,7 @@ const commodities = {"lumber": {"type": "lumber", "tileColor": "ForestGreen", "m
                      "grain": {"type": "grain", "tileColor": "Gold", "maxNumber": 4},
                      "sand": {"type": "sand", "tileColor": "Linen", "maxNumber": 1}}
 
-var board = {}
+var board = {{ board|safe }};
 var intersectionMap = []
 var numberTileMap = []
 var reversedIntersectionMap = []
@@ -522,34 +522,18 @@ var roundCounter = 0
 var playerTurn = 1
 var currentPlayer = players[0]
 
-function setBoardRandom(){
+function renderBoard(){
   var keys = Object.keys(commodities);
-  for(let i=0; i<docTiles.length;i++){
-    // get random commodity and number
-    if(i==0){  // 0 is the dessert tile
-      com_type = "sand"
-      number = "*"
-    } else {
-      var index = availableTiles.length * Math.random() << 0
-      var com_type = availableTiles[index]
-      availableTiles.splice(index, 1)  // splice args 1:start index 2:how many deletes 3(optional): insert what
+  for(let i=0; i<Object.keys(board).length;i++){
+    let tile = board[i]
 
-      index = availableNumbers.length * Math.random() << 0
-      var number = availableNumbers[index]
-      availableNumbers.splice(index, 1)  // splice args 1:start index 2:how many deletes 3(optional): insert what
-    }
-
-    var com = commodities[com_type]
-
-    // set the board object
-    board[String(i)] = {'commodity': com["type"], 'number': number}
+    var commodity = commodities[tile['commodity']]
 
     // set the tile color
-    docHex[i].style.backgroundColor = com["tileColor"]
-    docHex[i].children[0].innerHTML = number
+    docHex[i].style.backgroundColor = commodity["tileColor"]
+    docHex[i].children[0].innerHTML = tile['number']
     // docNumbers[i].innerHTML = number
   }
-  console.log("Complete")
 }
 
 
@@ -695,7 +679,7 @@ function rollDice(){
 
 
 function payOut(diceNumber){
-  console.log(`field length ${field.length}`)
+  console.log(`fieled length ${field.length}`)
   console.log(`yield for number ${diceNumber}`)
   for(let i=0; i<Object.keys(board).length;i++){  //this is how you take the length of an object
     if(board[i]["number"]==diceNumber){
@@ -712,6 +696,9 @@ function payOut(diceNumber){
     }
   }
 }
+
+setBoard()
+
 
 </script>
 

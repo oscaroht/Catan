@@ -3,6 +3,8 @@ from django.db import models
 from django.contrib.auth.models import User
 import django
 
+import json
+
 class Game(models.Model):
     name = models.TextField(default='No Name')
     creation_date = models.DateTimeField(default=django.utils.timezone.now())
@@ -24,6 +26,9 @@ class Board(models.Model):
     tile_id = models.IntegerField()
     commodity = models.TextField()
     number = models.IntegerField()
+
+    def dictionize(self):
+        return {str(self.tile_id): {'commodity': self.commodity, 'number': str(self.number)}}
 
 class Graph(models.Model):
     node1_id = models.IntegerField()

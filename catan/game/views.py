@@ -24,14 +24,14 @@ def home(request):
     return render(request, 'game/home.html')
 
 
-def create_board(game_id):
-    commodity = ["lumber", "lumber", "lumber", "lumber", "wool", "wool", "wool", "wool", "brick", "brick", "brick",
-                 "ore", "ore", "ore", "grain", "grain", "grain", "grain"]
-    numbers = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12]  # len 18
-    random.shuffle(numbers)
-    random.shuffle(commodity)
-    for i in range(1, 19):
-        Board(game_id, i, commodity[i], numbers[i])
+# def create_board(game_id):
+#     commodity = ["lumber", "lumber", "lumber", "lumber", "wool", "wool", "wool", "wool", "brick", "brick", "brick",
+#                  "ore", "ore", "ore", "grain", "grain", "grain", "grain"]
+#     numbers = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12]  # len 18
+#     random.shuffle(numbers)
+#     random.shuffle(commodity)
+#     for i in range(1, 19):
+#         Board(game_id, i, commodity[i], numbers[i])
 
 
 class CreateNewGameView(View):
@@ -52,7 +52,6 @@ class CreateNewGameView(View):
         board = json.loads(board)
         print(board)
         print(board['0'])
-
 
         new_game = Game.objects.create(name=game_name)
         for p in users:
@@ -84,7 +83,7 @@ class GameView(View):
 
     def get(self, request, pk):
         user = request.user
-        game = Game.objects.filter(id=pk).exists()
+        game = Game.objects.get(id=pk)
         if not game:
             return HttpResponse(f'Unauthorized')
         print(game)
@@ -92,7 +91,14 @@ class GameView(View):
         print(players)
         if user not in [p.user for p in players]:
             return HttpResponse(f'Unauthorized')
-        return HttpResponse(f'<h1>GET game {pk}</h1>')
+        boards = Board.objects.filter(game=game)
+        print(boards)
+        if not boards:
+            return HttpResponse(f'Board could not be found')
+        b_dict = {}
+        for b in boards:
+            b_dict.update(b.dictionize())
+        return render(request, 'game/game.html', {'board': b_dict})
 
 
 
